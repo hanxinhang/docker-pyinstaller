@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 LABEL maintainer="batonogov@icloud.com"
 
@@ -6,19 +6,19 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ARG WINE_VERSION=winehq-stable
 ARG PYTHON_VERSION=3.8.10
-ARG PYINSTALLER_VERSION=4.2
+ARG PYINSTALLER_VERSION=4.5.1
 
 # we need wine for this all to work, so we'll use the PPA
 RUN set -x \
     && dpkg --add-architecture i386 \
-    && apt-get update -qy \
-    && apt-get install --no-install-recommends -qfy apt-transport-https software-properties-common wget \
+    && apt update -qy \
+    && apt install --no-install-recommends -qfy apt-transport-https software-properties-common wget gpg-agent rename \
     && wget -nv https://dl.winehq.org/wine-builds/winehq.key \
     && apt-key add winehq.key \
     && add-apt-repository 'https://dl.winehq.org/wine-builds/ubuntu/' \
-    && apt-get update -qy \
-    && apt-get install --no-install-recommends -qfy $WINE_VERSION winbind cabextract \
-    && apt-get clean \
+    && apt update -qy \
+    && apt install --no-install-recommends -qfy $WINE_VERSION winbind cabextract \
+    && apt clean \
     && wget -nv https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
     && chmod +x winetricks \
     && mv winetricks /usr/local/bin

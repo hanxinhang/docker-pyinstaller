@@ -3,16 +3,14 @@
 **batonogov/pyinstaller-linux** and **batonogov/pyinstaller-windows** are a pair of Docker containers to ease compiling Python applications to binaries / exe files.
 
 Current PyInstaller version used: 
-- 4.2 for Python 3.9 
-- 3.6 for Python 2.7
+- 4.5.1 for Python 3.9.7
 
 ## Tags
 
-`batonogov/pyinstaller-linux` and `batonogov/pyinstaller-windows` both have two tags, `:python3` and `:python2` which you can use depending on the requirements of your project. `:latest` points to `:python3`
+`batonogov/pyinstaller-linux` both have few tags `:latest`, `:dev`, `:i386`, `:i386dev`. 
+`batonogov/pyinstaller-windows` both have few tags `:latest`, `:dev`, `:win32`, `:win32dev`.
 
-The `:python3` tag runs Python 3.9.
-
-The `:python2` tags run Python 2.7.
+The `:latest` tag runs Python 3.9.7 x86-64.
 
 ## Usage
 
@@ -30,13 +28,13 @@ For example, in the folder that has your source code, `.spec` file and `requirem
 docker run -v "$(pwd):/src/" batonogov/pyinstaller-windows
 ```
 
-will build your PyInstaller project into `dist/windows/`. The `.exe` file will have the same name as your `.spec` file.
+will build your PyInstaller project into `dist/`. The `.exe` file will have the same name as your `.spec` file.
 
 ```
 docker run -v "$(pwd):/src/" batonogov/pyinstaller-linux
 ```
 
-will build your PyInstaller project into `dist/linux/`. The binary will have the same name as your `.spec` file.
+will build your PyInstaller project into `dist/`. The binary will have the same name as your `.spec` file.
 
 ##### How do I install system libraries or dependencies that my Python packages need?
 
@@ -97,17 +95,28 @@ Added Python 3.6 on Windows, thanks to @jameshilliard
 Bumped Python version to 3.6 on Linux, thank you @itouch5000
 
 #### [1.8] - 2019-01-15
-Build using an older version of glibc to improve compatibility, thank you @itouch5000
-Updated PyInstaller to version 3.4
+- Build using an older version of glibc to improve compatibility, thank you @itouch5000
+- Updated PyInstaller to version 3.4
 
 #### [1.9] - 2020-01-14
-Added a 32bit package, thank you @danielguardicore
-Updated PyInstaller to version 3.6
+- Added a 32bit package, thank you @danielguardicore
+- Updated PyInstaller to version 3.6
 
 #### [2.0] - 2021-03-11
-Drop support for Python 2.7
-Updated Python 3 to version 3.9
-Updated PyInstaller to version 4.2
+- Drop support for Python 2.7
+- Updated Python 3 to version 3.9
+- Updated PyInstaller to version 4.2
+
+#### [2.1] - 2021-09-24
+- Update Ubuntu 16:04 -> 20:04 for win64 and win32
+- Updated PyInstaller 4.2 -> 4.5.1
+- Updated Python 3.9.5 -> 3.9.7
+
+#### [2.2] - 2021-10-17
+- Update Ubuntu 12:04 -> 20:04 for amd64
+- Update openssl 1.0.2u -> 1.1.1l for amd64
+- Deleted Python 2 Dockerfiles
+- Deleted 32 bit Dockerfiles
 
 ## License
 
