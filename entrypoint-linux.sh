@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 # Add path
-PYTHON_VERSION=3.10.0
+PYTHON_VERSION=3.9.7
 echo 'export PATH=$PATH:$HOME/.pyenv/versions/$PYTHON_VERSION/bin/' >> ~/.bashrc
 
 # Fail on errors.

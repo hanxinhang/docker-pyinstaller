@@ -5,7 +5,7 @@ LABEL maintainer="batonogov@icloud.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 ARG WINE_VERSION=winehq-stable
-ARG PYTHON_VERSION=3.10.0
+ARG PYTHON_VERSION=3.9.7
 ARG PYINSTALLER_VERSION=4.5.1
 
 # we need wine for this all to work, so we'll use the PPA
