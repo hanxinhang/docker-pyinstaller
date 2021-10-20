@@ -1,8 +1,7 @@
 #!/bin/bash -i
 
 # Add path
-PYTHON_VERSION=3.8.12
-echo 'export PATH=$PATH:$HOME/.pyenv/versions/$PYTHON_VERSION/bin/' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/.pyenv/versions/$(ls $HOME/.pyenv/versions/)/bin/' >> ~/.bashrc
 
 # Fail on errors.
 set -e
