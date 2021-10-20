@@ -29,12 +29,15 @@ RUN \
         libssl-dev \
         zlib1g-dev \
         libffi-dev \
-        #optional libraries
+        # optional libraries
         libgdbm-dev \
         # libgdbm3 \ # устанавливается только на ubuntu 12.04
         uuid-dev \
-        #upx
-        upx
+        # upx
+        upx \
+        # lzma & xz-utils
+        liblzma-dev \
+        xz-utils
 
 # required because openSSL on Ubuntu 12.04 and 14.04 run out of support versions of OpenSSL
 RUN mkdir openssl \
