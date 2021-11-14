@@ -3,12 +3,12 @@
 **batonogov/pyinstaller-linux** and **batonogov/pyinstaller-windows** are a pair of Docker containers to ease compiling Python applications to binaries / exe files.
 
 Current PyInstaller version used: 
-- 4.5.1 for Python 3.10.0
+- 4.5.1 for Python 3.9.7
 
 ## Tags
 
-`batonogov/pyinstaller-linux` both have few tags `:latest`, `:dev`. 
-`batonogov/pyinstaller-windows` both have few tags `:latest`, `:dev`.
+`batonogov/pyinstaller-linux` both have few tags `:latest`, `:dev`, `python-3.8`, `python-3.9`. 
+`batonogov/pyinstaller-windows` both have few tags `:latest`, `:dev` `python-3.8`, `python-3.9`.
 
 The `:latest` tag runs Python 3.10.0 x86-64.
 
@@ -54,7 +54,7 @@ will generate a `spec` file for `your-script.py` in your current working directo
 
 ##### How do I change the PyInstaller version used?
 
-Add `pyinstaller=4.1` to your `requirements.txt`.
+Add `pyinstaller=4.5.1` to your `requirements.txt`.
 
 ##### Is it possible to use a package mirror?
 
@@ -118,8 +118,9 @@ Bumped Python version to 3.6 on Linux, thank you @itouch5000
 - Deleted Python 2 Dockerfiles
 - Deleted 32 bit Dockerfiles
 
-#### [2.3] - 2021-10-17
-- UUpdated Python 3.9.7 -> 3.10.0
+#### [2.3] - 2021-11-14
+- Updated Python 3.9.7 -> 3.10.0
+- Update Pyinstaler 4.5.1 -> 4.7.0
 
 ## License
 

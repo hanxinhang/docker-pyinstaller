@@ -31,7 +31,7 @@ RUN \
         libffi-dev \
         # optional libraries
         libgdbm-dev \
-        # libgdbm3 \ # устанавливается только на ubuntu 12.04
+        libgdbm6 \
         uuid-dev \
         # upx
         upx \
